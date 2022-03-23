@@ -1,4 +1,4 @@
-# <span style="color:skyblue">**Adrian Strozzi - Portfolio**</span>
+# <span style="color:skyblue">**Adrian Strozzi - Password Generator**</span>
 
 ## <span style="color:violet">Description</span>
 
@@ -6,24 +6,24 @@
 
 ## <span style="color:violet">How to use</span>
 
-Use this **link** to access the Password Generator: [Adrian Strozzi - Password Generator](https://adrianstrozzi.github.io/Tec02Portfolio/)
+Use this **link** to access the Password Generator: [Adrian Strozzi - Password Generator](https://adrianstrozzi.github.io/Tec03PasswordGenerator/)
 
 ## <span style="color:violet">Usage</span>
 
 Define the **password parameters** by using the input box and checkboxes:  
-![mainpage](./assets/readme-images/Parameters.png)
+![mainpage](./assets/images/readme-images/Parameters.png)
 
-Please note that an **Alert** will show if at least one checkbox is not selected:  
-![mainpage](./assets/readme-images/AlertOneOption.png)
+Please note that an **Alert** will show if at least one checkbox is not selected:
+![mainpage](./assets/images/readme-images/AlertOneOption.png)
 
-Once parameter(s) is/are chosen click on the **Get Password Button** to get your password:  
-![mainpage](./assets/readme-images/GetPasswordBtn.png)
+Once parameter(s) is/are chosen click on the **Get Password Button** to get your password:
+![mainpage](./assets/images/readme-images/GetPasswordBtn.png)
 
-You will see your **Generated Password** in the box below:  
-![mainpage](./assets/readme-images/GeneratedPassword.png)
+You will see your **Generated Password** in the box below:
+![mainpage](./assets/images/readme-images/GeneratedPassword.png)
 
-Below is an image of the complete **App**:  
-![mainpage](./assets/readme-images/AppDesign.png)
+Below is an image of the complete **App**:
+![mainpage](./assets/images/readme-images/AppDesign.png)
 
 ## <span style="color:violet">Credits</span>
 
