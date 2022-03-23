@@ -40,7 +40,7 @@ header {
 }
 
 .card {
-  background-color: rgb(197, 197, 197);
+  background-color: rgb(226, 226, 226);
   border-radius: 30px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
@@ -139,6 +139,7 @@ button[disabled] {
   font-size: 1.2rem;
   text-align: center;
   margin-top: 10px;
+
   margin-bottom: 10px;
   /* border: 2px dashed #c0c7cf; */
   border: 3px solid rgb(100, 100, 100);
@@ -172,6 +173,10 @@ button[disabled] {
 }
 
 @media (max-width: 500px) {
+  .options label {
+    font-size: 0.9rem;
+  }
+
   .btn {
     font-size: 0.8rem;
   }
