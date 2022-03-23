@@ -1,30 +1,32 @@
 // Variable for Generate Button
-var generateBtn = document.querySelector("#generate");
+let generateBtn = document.querySelector("#generate");
 
-// Defining variables to point to our HTML elements of the different parameters that will be used for password criteria
-var passwordLengthInput = document.getElementById("length")
-var checkUpperCaseLetters = document.getElementById("upperCaseLetters")
-var checkLowerCaseLetters = document.getElementById("lowerCaseLetters")
-var checkNumbers = document.getElementById("numbers")
-var checkSpecial = document.getElementById("special")
-var displayPassword = document.getElementById("password")
+// Defining letiables to point to our HTML elements of the different parameters that will be used for password criteria
+let passwordLengthInput = document.getElementById("length")
+let checkUpperCaseLetters = document.getElementById("upperCaseLetters")
+let checkLowerCaseLetters = document.getElementById("lowerCaseLetters")
+let checkNumbers = document.getElementById("numbers")
+let checkSpecial = document.getElementById("special")
+let displayPassword = document.getElementById("password")
 
 // Event listener that triggers input read data
 passwordLengthInput.addEventListener('input', passwordLengthInputHandler)
 
 // Read input of password length
 function passwordLengthInputHandler(event) {
-  var value = event.target.value
+  let value = event.target.value
   passwordLengthInput.value = value
 }
 
 // Function for generating the password with selected parameters
 function generatePassword(passwordLength, includeUpperCaseLetters, includeLowerCaseLetters, includeNumbers, includeSpecial) {
-  characterCodes = upperCaseLettersCharCodes, lowerCaseLettersCharCodes, specialCharCodes, numbersCharCodes
+  // Defined array to store ASCII character codes for multiple parameters
+  let characterCodes = [lowerCaseLettersCharCodes && upperCaseLettersCharCodes && specialCharCodes && numbersCharCodes]
   if (includeUpperCaseLetters) characterCodes = characterCodes.concat(upperCaseLettersCharCodes)
   if (includeLowerCaseLetters) characterCodes = characterCodes.concat(lowerCaseLettersCharCodes)
   if (includeNumbers) characterCodes = characterCodes.concat(numbersCharCodes)
   if (includeSpecial) characterCodes = characterCodes.concat(specialCharCodes)
+
   // Alert for user to select at least one checkbox
   if (!includeLowerCaseLetters && !includeUpperCaseLetters && !includeSpecial && !includeNumbers) alert("Check at least one option!")
 
@@ -41,11 +43,11 @@ function generatePassword(passwordLength, includeUpperCaseLetters, includeLowerC
 
 
 // Defining variables to specify ASCII Character Code range per type of character
-var upperCaseLettersCharCodes = getcharCodes(65, 90)
-var lowerCaseLettersCharCodes = getcharCodes(97, 122)
-var numbersCharCodes = getcharCodes(48, 57)
+let upperCaseLettersCharCodes = getcharCodes(65, 90)
+let lowerCaseLettersCharCodes = getcharCodes(97, 122)
+let numbersCharCodes = getcharCodes(48, 57)
 // concat method used to sum different ranges of ASCII codes for special characters
-var specialCharCodes = getcharCodes(33, 47).concat(
+let specialCharCodes = getcharCodes(33, 47).concat(
   getcharCodes(58, 64)
 ).concat(
   getcharCodes(91, 96)
@@ -65,18 +67,15 @@ function getcharCodes(rangeLower, rangeUpper) {
 // Function used to write password to the box which looks for checked options and the parameters used in our generatePassword function
 function writePassword(event) {
   event.preventDefault()
-  var passwordLength = passwordLengthInput.value
-  var includeUpperCaseLetters = checkUpperCaseLetters.checked
-  var includeLowerCaseLetters = checkLowerCaseLetters.checked
-  var includeNumbers = checkNumbers.checked
-  var includeSpecial = checkSpecial.checked
+  const passwordLength = passwordLengthInput.value
+  const includeUpperCaseLetters = checkUpperCaseLetters.checked
+  const includeLowerCaseLetters = checkLowerCaseLetters.checked
+  const includeNumbers = checkNumbers.checked
+  const includeSpecial = checkSpecial.checked
 
-  var finalGeneratedPassword = generatePassword(passwordLength, includeUpperCaseLetters, includeLowerCaseLetters, includeNumbers, includeSpecial)
+  const finalGeneratedPassword = generatePassword(passwordLength, includeUpperCaseLetters, includeLowerCaseLetters, includeNumbers, includeSpecial)
   displayPassword.innerText = finalGeneratedPassword
 }
-
-
-
 
 // Add event listener to generate button to execute our writePassword function when clicked
 generateBtn.addEventListener("click", writePassword);
