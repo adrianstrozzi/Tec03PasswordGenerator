@@ -14,7 +14,6 @@ body,
 
 body {
   font-family: sans-serif;
-  /* background-color: #f9fbfd; */
   background-color: #212122;
 }
 
@@ -28,12 +27,6 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  /* color: white(206, 17%, 28%); */
-
-  /* background: linear-gradient(to right, #0575e6, #00f260);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-
   background: linear-gradient(to right, #e100ff, #7f00ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -44,12 +37,6 @@ header {
   border-radius: 30px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  /* color: #00f260; */
-
-  /* background: linear-gradient(to right, #0575e6, #00f260);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
@@ -73,6 +60,7 @@ header {
 
 .card-body {
   min-height: 100px;
+  display: flex;
 }
 
 .card-footer {
@@ -95,7 +83,6 @@ header {
 
 .btn {
   border: none;
-  /* background-color: hsl(360, 91%, 36%); */
   background-color: #e605a3;
 
   border-radius: 20px;
@@ -112,7 +99,6 @@ header {
 }
 
 .btn:hover {
-  /* opacity: 0.9; */
   background-color: #d864f0;
 }
 
@@ -135,13 +121,11 @@ button[disabled] {
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 85px;
+  padding-bottom: 80px;
   font-size: 1.2rem;
   text-align: center;
   margin-top: 10px;
-
   margin-bottom: 10px;
-  /* border: 2px dashed #c0c7cf; */
   border: 3px solid rgb(100, 100, 100);
   border-radius: 6px;
   resize: none;

@@ -1,74 +1,57 @@
-// Assignment Code
+// Variable for Generate Button
 var generateBtn = document.querySelector("#generate");
 
-var passwordLength = document.getElementById("length")
-var includeUpperCaseLetters = document.getElementById("upperCaseLetters")
-var includeLowerCaseLetters = document.getElementById("LowerCaseLetters")
-var includeNumbers = document.getElementById("numbers")
-var includeSpecial = document.getElementById("special")
 
-// var passwordLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-// var passwordNumbers = "0123456789"
-// var passwordSpecial = "!@#$%^&*()"
+// Defining variables to point to our HTML elements of the different parameters that will be used for password criteria
+var passwordLengthInput = document.getElementById("length")
+var checkUpperCaseLetters = document.getElementById("upperCaseLetters")
+var checkLowerCaseLetters = document.getElementById("lowerCaseLetters")
+var checkNumbers = document.getElementById("numbers")
+var checkSpecial = document.getElementById("special")
+var displayPassword = document.getElementById("password")
 
 
-passwordLength.addEventListener('input', passwordLengthInput)
+// Event listener that triggers input read data
+passwordLengthInput.addEventListener('input', passwordLengthInputHandler)
 
 
 // Read input of password length
-function passwordLengthInput(event) {
+function passwordLengthInputHandler(event) {
   var value = event.target.value
-  passwordLength.value = value
-}
-
-// Function for generating the password with selected parameters
-
-// function generatePassword(passwordLength, includeUpperCaseLetters, includeLowerCaseLetters, includeNumbers, includeSpecial) {
-
-// }
-
-
-
-//Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
+  passwordLengthInput.value = value
 }
 
 
 
-// Add event listener to generate button
+
+
+// Defining variables to specify ASCII Character Code range per type of character
+var upperCaseLettersCharCodes = getcharCodes(65, 90)
+var lowerCaseLettersCharCodes = getcharCodes(97, 122)
+var numbersCharCodes = getcharCodes(48, 57)
+// concat method used to sum different ranges of ASCII codes for special characters
+var specialCharCodes = getcharCodes(33, 47).concat(
+  getcharCodes(58, 64)
+).concat(
+  getcharCodes(91, 96)
+).concat(
+  getcharCodes(123, 126)
+)
+
+// Array to include range of ASCII Character Codes
+function getcharCodes(rangeLower, rangeUpper) {
+  const charCodes = []
+  for (let i = rangeLower; i <= rangeUpper; i++) {
+    charCodes.push(i)
+  }
+  return charCodes
+}
+
+
+
+
+
+
+
+// Add event listener to generate button to execute our writePassword function when clicked
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
-
-// function generatePassword() {
-//   generateBtn.addEventListener('click', function () {
-//     var passwordLength = prompt("Please choose a password length between 8-128 characters.")
-//     if (
-//       isNaN(passwordLength) ||
-//       passwordLength < 8 || passwordLength > 128
-//     ) {
-//       prompt("Please choose password length number between 8 & 128.");
-//     }
-//     else {
-//       alert("Password generated with " + passwordLength + " characters.")
-//     }
-//     var passwordIncludeLetters = prompt("Do you want your password to include letters? Choose Y or N.")
-//     if (passwordIncludeLetters === "Y"
-//     ) {
-//       alert("Your password will include letters");
-//     }
-//     else if (passwordIncludeLetters === "N") {
-//       alert("Your password will not include letters");
-//     }
-//     else {
-//       prompt("Please choose Y or N");
-//     }
-//   })
-// }
